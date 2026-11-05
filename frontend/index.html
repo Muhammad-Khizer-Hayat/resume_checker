@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResumeFit — Know your match before they do</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>ResumeFit</a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="app.html" class="btn btn-primary magnetic ripple"><span>Check my resume</span></a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <canvas id="hero-network"></canvas>
+  <div class="hero-spotlight" id="hero-spotlight"></div>
+  <div class="container hero-inner">
+    <div>
+      <p class="eyebrow">AI resume &amp; job-description matching</p>
+      <h1><span class="word">Know</span> <span class="word">your</span> <span class="word">match,</span> <span class="word"><em>before</em></span> <span class="word">they</span> <span class="word">do.</span></h1>
+      <p class="lede">Paste a job description, upload your resume, and get an honest score: what you already cover, what's missing, and exactly what to fix before you hit apply.</p>
+      <div class="hero-actions">
+        <a href="app.html" class="btn btn-primary magnetic ripple"><span>Check my resume</span></a>
+        <a href="#how" class="btn btn-ghost magnetic ripple"><span>See how it works</span></a>
+      </div>
+      <p class="hero-note">No sign-up. Your resume is analyzed on request and not stored.</p>
+    </div>
+
+    <div class="hero-visual" id="hero-visual">
+      <div class="report-card">
+        <div class="report-card-head">
+          <div>
+            <strong>Match report</strong>
+            <div class="role">Backend Engineer · Applied via ResumeFit</div>
+          </div>
+          <span class="pill pill-grade-b">Grade B</span>
+        </div>
+        <div class="score-row">
+          <div class="ring" style="--pct:82"><div class="ring-inner"><strong>82</strong><span>SCORE</span></div></div>
+          <div class="score-meta">
+            <strong>Strong match</strong>
+            <p>Covers most core requirements. A few gaps to close first.</p>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag tag-match">FastAPI</span>
+          <span class="tag tag-match">PostgreSQL</span>
+          <span class="tag tag-match">Docker</span>
+          <span class="tag tag-gap">Kubernetes</span>
+          <span class="tag tag-gap">gRPC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container stats">
+    <div class="stat-card reveal">
+      <div class="stat-number"><span data-count-to="3">0</span></div>
+      <p class="stat-label">Score dimensions in every report — skill match, experience fit, requirement fit</p>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-number"><span data-count-to="16">0</span></div>
+      <p class="stat-label">Matched keywords surfaced per report, ranked by importance</p>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-number"><span data-count-to="10">0</span></div>
+      <p class="stat-label">Missing keywords flagged, so you know exactly what to add</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>How each score is calculated</h2>
+      <p>No hidden formula — here's exactly what feeds into your report, and how the model weighs it.</p>
+    </div>
+
+    <div class="accordion" id="accordion">
+      <div class="acc-row reveal open">
+        <button class="acc-head" type="button">
+          <span class="acc-num">01</span>
+          <span class="acc-title">Skill match</span>
+          <span class="acc-arrow">→</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>The model reads the job description for named skills, tools, and technologies, then checks your resume for evidence of each one — not just the word appearing, but real context around it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-row reveal">
+        <button class="acc-head" type="button">
+          <span class="acc-num">02</span>
+          <span class="acc-title">Experience fit</span>
+          <span class="acc-arrow">→</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>Seniority, years, and the shape of your past roles are weighed against what the listing actually asks for — a senior-sounding JD scores differently than a junior one, even with identical skills.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-row reveal">
+        <button class="acc-head" type="button">
+          <span class="acc-num">03</span>
+          <span class="acc-title">Requirement fit</span>
+          <span class="acc-arrow">→</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>Beyond skills — location, certifications, domain knowledge, and any other explicit "must-have" the job description lists get checked off (or flagged as missing) individually.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-row reveal">
+        <button class="acc-head" type="button">
+          <span class="acc-num">04</span>
+          <span class="acc-title">Matched &amp; missing keywords</span>
+          <span class="acc-arrow">→</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>Every keyword shown is grounded in the actual text of your resume or the job description — nothing is invented. Matches are ranked by importance to the role; gaps are the ones worth adding first.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Three steps, one honest verdict</h2>
+      <p>ResumeFit reads both documents the way a recruiter would — then explains its reasoning instead of hiding behind a single number.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Paste the job description</h3>
+        <p>Drop in the listing text or the role's requirements, exactly as posted.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Upload your resume</h3>
+        <p>PDF or plain text works. Nothing is saved after your report is generated.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Get a scored breakdown</h3>
+        <p>Skill match, experience fit, and requirement coverage — plus what to add.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Built to be specific, not flattering</h2>
+      <p>Generic ATS checkers count keywords. ResumeFit reads context — so a score means something.</p>
+    </div>
+
+    <div class="tab-panel reveal">
+      <div class="tab-list" id="feature-tabs">
+        <div class="tab-indicator" id="tab-indicator"></div>
+        <button class="tab-item active" data-tab="0">
+          <span class="tab-num">01</span>
+          <span>Grounded scoring</span>
+        </button>
+        <button class="tab-item" data-tab="1">
+          <span class="tab-num">02</span>
+          <span>Breakdown, not just a number</span>
+        </button>
+        <button class="tab-item" data-tab="2">
+          <span class="tab-num">03</span>
+          <span>Actionable gaps</span>
+        </button>
+      </div>
+
+      <div class="tab-content" id="tab-content">
+        <div class="tab-pane active" data-pane="0">
+          <div class="tab-pane-icon">A</div>
+          <h3>Grounded scoring</h3>
+          <p>Every match and gap is tied to language actually in your resume and the job description — no invented skills, no assumed experience.</p>
+        </div>
+        <div class="tab-pane" data-pane="1">
+          <div class="tab-pane-icon">B</div>
+          <h3>Breakdown, not just a number</h3>
+          <p>See skill match, experience fit, and requirement coverage separately, so you know exactly what's dragging the score down — and what's already working.</p>
+        </div>
+        <div class="tab-pane" data-pane="2">
+          <div class="tab-pane-icon">C</div>
+          <h3>Actionable gaps</h3>
+          <p>Missing keywords and reviewer-style concerns, written plainly enough to act on in your next edit — not vague advice to "tailor your resume."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band section-alt">
+  <div class="container reveal">
+    <h2>Stop guessing whether you're a fit.</h2>
+    <a href="app.html" class="btn btn-primary magnetic ripple"><span>Run your first check</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner reveal">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><span class="logo-mark"></span>ResumeFit</a>
+      <p>Built for job seekers who'd rather know now.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="app.html">Check my resume</a>
+    </div>
+    <button type="button" class="back-to-top magnetic ripple" id="back-to-top">
+      <span>Back to top ↑</span>
+    </button>
+  </div>
+</footer>
+
+<script src="animations.js"></script>
+</body>
+</html>

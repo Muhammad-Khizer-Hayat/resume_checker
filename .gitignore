@@ -1,0 +1,7 @@
+cd "E:\MyAI Work\resumefit"
+@"
+.env
+venv/
+__pycache__/
+*.pyc
+"@ | Out-File -Encoding utf8 .gitignore

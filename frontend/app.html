@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResumeFit — Check your match</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>ResumeFit</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</nav>
+
+<div class="app-shell">
+
+  <form class="panel input-panel" id="analyze-form">
+    <h2 data-scramble>Run a match check</h2>
+    <p class="sub">Add the job details and your resume.</p>
+
+    <div class="field">
+      <label for="job_title">Job title</label>
+      <input type="text" id="job_title" name="job_title" placeholder="e.g. Backend Engineer" required>
+    </div>
+
+    <div class="field">
+      <label for="job_description">Job description</label>
+      <textarea id="job_description" name="job_description" placeholder="Paste the full job description here…" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="resume_file">Resume (PDF or .txt)</label>
+      <div class="dropzone" id="dropzone">
+        <span id="dropzone-label">Click to upload, or drag a file here</span>
+        <input type="file" id="resume_file" name="resume" accept=".pdf,.txt,.md" required>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block ripple" id="submit-btn">Analyze match</button>
+
+    <div class="error-msg" id="error-box"></div>
+  </form>
+
+  <div class="panel results-panel">
+
+    <div class="empty-state" id="empty-state">
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" style="margin-bottom:18px">
+        <rect x="7" y="4" width="24" height="32" rx="3" stroke="#c7cad3" stroke-width="2"/>
+        <line x1="12" y1="13" x2="26" y2="13" stroke="#c7cad3" stroke-width="2"/>
+        <line x1="12" y1="19" x2="26" y2="19" stroke="#c7cad3" stroke-width="2"/>
+        <line x1="12" y1="25" x2="20" y2="25" stroke="#c7cad3" stroke-width="2"/>
+        <circle cx="33" cy="33" r="9" fill="#eff1f5" stroke="#3b4cff" stroke-width="2"/>
+        <path d="M29.5 33.5l2.2 2.2 4.3-4.7" stroke="#3b4cff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Your report will appear here</h3>
+      <p>Fill in the job description and upload a resume, then run the analysis.</p>
+    </div>
+
+    <div class="loading-state" id="loading-state">
+      <div class="spinner"></div>
+      <p>Reading your resume against the job description…</p>
+    </div>
+
+    <div class="report" id="report">
+      <div class="report-top">
+        <div>
+          <h2 id="report-title">Match report</h2>
+          <div class="sub" id="report-summary"></div>
+        </div>
+        <div class="big-ring" id="score-ring">
+          <div class="big-ring-inner">
+            <strong id="score-number">0</strong>
+            <span>MATCH</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="breakdown-grid">
+        <div class="bar-card">
+          <div class="label">Skill match</div>
+          <div class="value" id="bd-skill">0%</div>
+          <div class="bar-track"><div class="bar-fill" id="bar-skill"></div></div>
+        </div>
+        <div class="bar-card">
+          <div class="label">Experience fit</div>
+          <div class="value" id="bd-exp">0%</div>
+          <div class="bar-track"><div class="bar-fill" id="bar-exp"></div></div>
+        </div>
+        <div class="bar-card">
+          <div class="label">Requirement fit</div>
+          <div class="value" id="bd-req">0%</div>
+          <div class="bar-track"><div class="bar-fill" id="bar-req"></div></div>
+        </div>
+      </div>
+
+      <div class="kw-section">
+        <h3>Matched keywords <span class="kw-count" id="matched-count"></span></h3>
+        <div class="kw-wrap" id="matched-keywords"></div>
+      </div>
+
+      <div class="kw-section">
+        <h3>Missing keywords <span class="kw-count" id="missing-count"></span></h3>
+        <div class="kw-wrap" id="missing-keywords"></div>
+      </div>
+
+      <div class="list-section">
+        <div>
+          <h3>Strengths</h3>
+          <ul id="strengths-list"></ul>
+        </div>
+        <div>
+          <h3>Gaps to address</h3>
+          <ul id="gaps-list"></ul>
+        </div>
+      </div>
+
+      <div class="summary-box">
+        <strong>Verdict</strong>
+        <span id="summary-text"></span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="animations.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
