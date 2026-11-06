@@ -983,3 +983,8 @@ footer {
   .list-section { grid-template-columns: 1fr; }
   .nav-links { display: none; }
 }
+.logo-img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
