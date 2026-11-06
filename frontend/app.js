@@ -1,5 +1,6 @@
 // Point this at your running backend. Defaults to local dev.
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://resumechecker-productin.up.railway.app";
+// const API_BASE = "http://127.0.0.1:8000";
 
 const form = document.getElementById("analyze-form");
 const dropzone = document.getElementById("dropzone");
